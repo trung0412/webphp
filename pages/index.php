@@ -32,9 +32,9 @@
         include("topbar.php"); 
         include("thanhtimkiem.php");
         include("navbar.php");
-        include("featured.php");
         
         include("product.php");
+        include("featured.php");
         include("offer.php");
         include("footer.php");
     ?>

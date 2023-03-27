@@ -1,3 +1,4 @@
+<p style="text-align: center;">QUẢN LÝ SẢN PHẨM</p>
 <p>Thêm  sản phẩm</p>
 <table border="1" width="100%" style="border-collapse: collapse;">
 <form method="POST" action="modules/quanlysp/xuly.php" enctype="multipart/form-data">

@@ -81,6 +81,7 @@
                 <?php
                     if(isset($_SESSION['dangky'])){
                         echo $_SESSION['dangky'];
+                        echo $_SESSION['id_khachhang'];
                     } 
                 ?>
                </p>
@@ -161,7 +162,7 @@
                             <?php
                             if(isset($_SESSION['dangky'])){
                                 ?>
-                                <p><a href="thanhtoan.php?quanly=thanhtoan">Đặt hàng</a></p>
+                                <p><a href="thanhtoan.php">Đặt hàng</a></p>
                             <?php  
                             }else{
                             ?>

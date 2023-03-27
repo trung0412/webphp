@@ -41,18 +41,46 @@
 
 
 <!-- Nav Item - Pages Collapse Menu -->
-<li class="nav-item" style="color: #000;">
+<li class="nav-item is-active" style="color: #000;" active-color="DarkSlateBlue">
     <a class="nav-link" href="index.php?action=quanlydanhmucsanpham&query=them">
         <span style="color: #000; font-size: 15px">Quản lý danh mục sản phẩm</span>
     </a>
+    <span class="nav-indicator"></span>
 </li>
-<li class="nav-item" style="color: #000;">
+<li class="nav-item" style="color: #000;" active-color="red">
     <a class="nav-link" href="index.php?action=quanlysp&query=them">
         <span style="color: #000; font-size: 15px;">Quản lý sản phẩm</span>
     </a>
+    <span class="nav-indicator"></span>
 </li>
-
+<li class="nav-item" style="color: #000;" active-color="pink">
+    <a class="nav-link" href="index.php?action=quanlydonhang&query=lietke">
+        <span style="color: #000; font-size: 15px;">Quản lý đơn hàng</span>
+    </a>
+    <span class="nav-indicator"></span>
+</li>
 </ul>
-    
+        
 </body>
 </html>
+<!-- <script>
+ 
+    var items = document.querySelectorAll('.nav-item');
+   function handleIndicator(el) {
+        items.forEach(function (item) {
+            item.classList.remove('is-active');
+            item.removeAttribute('style');
+        });
+        indicator.style.width = "".concat(el.offsetWidth, "px");
+        indicator.style.left = "".concat(el.offsetLeft, "px");
+        indicator.style.backgroundColor = el.getAttribute('active-color');
+        el.classList.add('is-active');
+        el.style.color = el.getAttribute('active-color');
+    }
+   items.forEach(function (item, menu) {
+        item.addEventListener('click', function (e) {
+            handleIndicator(e.target);
+        });
+        item.classList.contains('is-active') && handleIndicator(item);
+    });
+</script> -->

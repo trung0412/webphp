@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>EShopper - Bootstrap Shop Template</title>
+    <title>Tất cả sản phẩm</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -24,62 +24,80 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 </head>
-<?php
-session_start(); 
-?>
+
 <body>
-    <!-- Topbar Start -->
-    <?php include("topbar.php"); ?>
-    <!-- Topbar End -->
+    <?php
 
-
-    <!-- Navbar Start -->
+        include("../admincp/connect/config.php");
+        include("topbar.php"); 
+        // include("navbar.php");
+        // include("featured.php");
+        
+        
+        // include("offer.php");
+        // include("footer.php");
+    ?>
     <div class="container-fluid">
         <div class="row border-top px-xl-5">
+            <!-- <div class="col-lg-3 d-none d-lg-block">
+                <a class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
+                    <h6 class="m-0">Categories</h6>
+                    <i class="fa fa-angle-down text-dark"></i>
+                </a>
+                <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 1;">
+                    <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
+                        <a href="shop.php?quanly=danhmucsanpham$id=1" class="nav-item nav-link">Adidas</a>
+                        <a href="shop.php?quanly=danhmucsanpham$id=2" class="nav-item nav-link">Nike</a>
+                        <a href="shop.php?quanly=danhmucsanpham$id=3" class="nav-item nav-link">Puma</a>
+                    </div>
+                </nav>
+            </div> -->
             <div class="col-lg-9">
                 <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <?php
                             include("menu.php") 
                         ?>
-                        
                     </div>
                 </nav>
             </div>
         </div>
     </div>
-    <!-- Navbar End -->
+    <?php
+        include("tatca.php") 
+    ?>
+
+    <!-- Categories Start -->
+
+    <!-- Categories End -->
 
 
-    <!-- Page Header Start -->
-    <div class="container-fluid bg-secondary mb-5">
-        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
-            <h1 class="font-weight-semi-bold text-uppercase mb-3">DANH MỤC SẢN PHẨM</h1>
-            <div class="d-inline-flex">
-                <p class="m-0"><a href="index.php">Trang chủ</a></p>
-                <p class="m-0 px-2">-</p>
-                <p class="m-0">Danh mục sản phẩm</p>
-            </div>
-        </div>
-    </div>
-    <!-- Page Header End -->
+    <!-- Offer Start -->
+
+    <!-- Offer End -->
 
 
-    <!-- Shop Start -->
-    <div class="container-fluid pt-5">
-        <div class="row px-xl-5">
-        <?php
-            include("danhmuc.php"); 
-        ?>
-        </div>
-    </div>
-    <!-- Shop End -->
+    <!-- Products Start -->
+
+    <!-- Products End -->
+
+
+    <!-- Subscribe Start -->
+ 
+    <!-- Subscribe End -->
+
+
+    <!-- Products Start -->
+
+    <!-- Products End -->
+
+
+    <!-- Vendor Start -->
+    <!-- Vendor End -->
 
 
     <!-- Footer Start -->
-    <?php
-        include("footer.php");
-    ?>
+
     <!-- Footer End -->
 
 

@@ -4,7 +4,7 @@
  ?>
 <p>Liệt kê danh mục sản phẩm</p>
 <table border="1" width="50%" style="border-collapse: collapse;">
-  <tr>
+  <tr style="text-align: center;">
     <th>Id</th>
     <th>Tên danh mục</th>
     <th>Quản lý</th>
@@ -14,7 +14,7 @@
   while($row = mysqli_fetch_array($query_lietke_danhmucsp)){
   	$i++;
    ?>
-  <tr>
+  <tr style="text-align: center;">
     <td><?php echo $i ?></td>
     <td><?php echo $row['tendanhmuc'] ?></td>
     <td>

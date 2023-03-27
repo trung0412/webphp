@@ -7,9 +7,9 @@
             <div class="col-lg-6 col-6 text-left">
                 <form action="">
                     <div class="input-group">
-                        <form action="index.php?quanly=timkiem" method="GET">
+                        <form action="index.php?quanly=timkiem" method="POST">
                             <input type="text" placeholder="Tìm kiếm sản phẩm" name="tukhoa">
-                            <a href="timkiem.php"><input type="submit" name="timkiem" value="Tìm kiếm"></a>
+                            <a href=""><input type="submit" name="timkiem" value="Tìm kiếm"></a>
                         </form>
                     </div>
                 </form>

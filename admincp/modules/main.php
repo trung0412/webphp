@@ -11,15 +11,22 @@
 				if($tam == 'quanlydanhmucsanpham' && $query=='them'){
 					include("modules/quanlydanhmucsp/them.php");
 					include("modules/quanlydanhmucsp/lietke.php");
-				}elseif($tam == 'quanlydanhmuc' && $query=='sua'){
-					include("modules/quanlydanhmuc/sua.php");
+				}elseif($tam == 'quanlydanhmucsanpham' && $query=='sua'){
+					include("modules/quanlydanhmucsp/sua.php");
 				}
 				elseif($tam == 'quanlysp' && $query=='them'){
 					include("modules/quanlysp/them.php");
 					include("modules/quanlysp/lietke.php");
 				}elseif($tam == 'quanlysp' && $query=='sua'){
 					include("modules/quanlysp/sua.php");
-				}else{
+				}
+				elseif($tam == 'quanlydonhang' && $query=='lietke'){
+					include("modules/quanlydonhang/lietke.php");
+				}
+				elseif($tam == 'donhang' && $query=='xemdonhang'){
+					include("modules/quanlydonhang/xemdonhang.php");
+				}
+				else{
 					include("modules/dashboard.php");
 				}
 	?>
