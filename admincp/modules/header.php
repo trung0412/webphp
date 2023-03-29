@@ -1,7 +1,7 @@
 
 
 <?php
-    if(isset($_GET['dangxuat'])&&$_GET['dangxuat']==1){
+    if(isset($_GET['logout'])&&$_GET['logout']==1){
         unset($_SESSION['dangnhap']);
         header('Location:login.php');
     } 
@@ -108,7 +108,6 @@
                         <!-- Nav Item - Messages -->
                     
 
-                        <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">

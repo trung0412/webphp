@@ -29,8 +29,10 @@
     <!-- Topbar Start -->
     <?php include("topbar.php"); ?>
     <!-- Topbar End -->
-
-
+    <?php include("thanhtimkiem.php"); ?>
+    <?php
+    session_start(); 
+    ?>
     <!-- Navbar Start -->
     <div class="container-fluid">
         <div class="row border-top px-xl-5">
@@ -62,16 +64,16 @@
 
 
     <!-- Page Header Start -->
-    <!-- <div class="container-fluid bg-secondary mb-5">
+    <div class="container-fluid bg-secondary mb-5">
         <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
-            <h1 class="font-weight-semi-bold text-uppercase mb-3">Shop Detail</h1>
+            <h1 class="font-weight-semi-bold text-uppercase mb-3">Chi tiết sản phẩm</h1>
             <div class="d-inline-flex">
-                <p class="m-0"><a href="">Home</a></p>
+                <p class="m-0"><a href="">Trang chủ</a></p>
                 <p class="m-0 px-2">-</p>
-                <p class="m-0">Shop Detail</p>
+                <p class="m-0">Chi tiết sản phẩm</p>
             </div>
         </div>
-    </div> -->
+    </div>
     <!-- Page Header End -->
     <?php 
         include("../admincp/connect/config.php");

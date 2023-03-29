@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>EShopper - Bootstrap Shop Template</title>
+    <title>T-Sneaker</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -40,7 +40,7 @@
     <!-- Topbar Start -->
     <?php include("topbar.php"); ?>
     <!-- Topbar End -->
-
+    <?php include("thanhtimkiem.php"); ?>
 
     <!-- Navbar Start -->
     <div class="container-fluid">
@@ -75,7 +75,7 @@
     <!-- Page Header Start -->
     <div class="container-fluid bg-secondary mb-5">
         <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
-            <h1 class="font-weight-semi-bold text-uppercase mb-3">Shopping Cart</h1>
+            <h1 class="font-weight-semi-bold text-uppercase mb-3">Giỏ hàng</h1>
             <div class="d-inline-flex">
                <p>Xin chào : 
                 <?php
@@ -123,7 +123,7 @@
                             $i++;
                     ?>
                     <tr>
-                        <td class="align-middle"><img src="img/product-1.jpg" alt="" style="width: 50px;"></td>
+                        <td class="align-middle"><img src="../admincp/modules/quanlysp/uploads/<?php echo $cart_item['hinhanh']; ?>" style="width: 100px;"></td>
                         <td class="align-middle"><?php echo $i; ?></td>
                         <td class="align-middle"><?php echo $cart_item['tensanpham']; ?></td>
                         <td class="align-middle"><?php echo $cart_item['masp']; ?></td>
@@ -190,7 +190,7 @@
                 </table>
 
             </div>
-            <div class="col-lg-4">
+            <!-- <div class="col-lg-4">
                  <div class="card border-secondary mb-5">
                     <div class="card-header bg-secondary border-0">
                         <h4 class="font-weight-semi-bold m-0">Cart Summary</h4>
@@ -209,7 +209,7 @@
                         <button class="btn btn-block btn-primary my-3 py-3">Proceed To Checkout</button>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- Cart End -->

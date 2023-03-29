@@ -29,11 +29,11 @@
                         <img class="img-fluid w-100" src="../admincp/modules/quanlysp/uploads/<?php echo $row_pro['hinhanh'] ?>">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3"><?php echo $row_pro['tensanpham'] ?></h6>
+                        <h6 class="text-truncate mb-3">Tên Sản phẩm : <?php echo $row_pro['tensanpham'] ?></h6>
                         <div class="d-flex justify-content-center">
-                            <h6 class="text-muted ml-2"><?php echo number_format($row_pro['giasp'],0,',','.').'vnd' ?></h6>
+                            <h6 class="text-muted ml-2">Giá : <?php echo number_format($row_pro['giasp'],0,',','.').'vnd' ?></h6>
                         </div>
-                        <h6 class="text-truncate mb-3"><?php echo $row_pro['tendanhmuc'] ?></h6>
+                        <h6 class="text-truncate mb-3">Danh mục : <?php echo $row_pro['tendanhmuc'] ?></h6>
                     </div>
                     <form  method="POST" action="themgiohang.php?idsanpham=<?php echo $row_pro['id_sanpham'] ?> ">
                     <div class="card-footer d-flex justify-content-between bg-light border">

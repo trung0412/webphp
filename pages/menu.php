@@ -52,5 +52,16 @@
                             } 
                             ?>
                         </div>
+                        
+                        <div class="navbar-nav ml-auto py-0">
+                            <p style="margin-top: 15px;">Xin chào : 
+                                <?php
+                                    if(isset($_SESSION['dangky'])){
+                                        echo $_SESSION['dangky'];
+                                        echo $_SESSION['id_khachhang'];
+                                    } 
+                                ?>
+                            </p>
+                        </div>
                     </div>
  </nav>

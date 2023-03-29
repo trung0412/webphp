@@ -12,7 +12,7 @@
     <th>Số lượng</th>
     <th>Đơn giá</th>
     <th>Thành tiền</th>
-  
+    <th>Quản lý</th>
   </tr>
   <?php
   $i = 0;
@@ -29,6 +29,7 @@
     <td><?php echo $row['soluongmua'] ?></td>
     <td><?php echo number_format($row['giasp'],0,',','.').'vnd' ?></td>
     <td><?php echo number_format($row['giasp']* $row['soluongmua'],0,',','.').'vnd'?></td>
+    <td><a href="index.php?action=quanlydonhang&query=lietke">Quay lại</a></td>
   </tr>
   <?php
   } 

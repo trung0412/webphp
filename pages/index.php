@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>EShopper - Bootstrap Shop Template</title>
+    <title>T-Sneaker</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -38,41 +38,6 @@
         include("offer.php");
         include("footer.php");
     ?>
-
-
-
-    <!-- Categories Start -->
-
-    <!-- Categories End -->
-
-
-    <!-- Offer Start -->
-
-    <!-- Offer End -->
-
-
-    <!-- Products Start -->
-
-    <!-- Products End -->
-
-
-    <!-- Subscribe Start -->
- 
-    <!-- Subscribe End -->
-
-
-    <!-- Products Start -->
-
-    <!-- Products End -->
-
-
-    <!-- Vendor Start -->
-    <!-- Vendor End -->
-
-
-    <!-- Footer Start -->
-
-    <!-- Footer End -->
 
 
     <!-- Back to Top -->

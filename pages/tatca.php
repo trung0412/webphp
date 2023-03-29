@@ -51,7 +51,7 @@
         <style>
             ul.list_trang{
                 padding-left: 50px;
-                padding-bottom: 20px;
+                padding-bottom: 40px;
                 list-style: none;
             }
             ul.list_trang li{

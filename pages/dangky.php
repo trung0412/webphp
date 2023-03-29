@@ -14,7 +14,7 @@
                     </script>';
             // header('Location:dangnhap.php');
             $_SESSION['dangky'] = $tenkhachhang;
-            
+            $_SESSION['email'] = $email;
             $_SESSION['id_khachhang'] = mysqli_insert_id($mysqli);
             header('Location:giohang.php');
         }

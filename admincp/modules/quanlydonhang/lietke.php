@@ -1,10 +1,11 @@
+<p style="text-align: center;">QUẢN LÝ ĐƠN HÀNG</p>
 <p>Liệt kê đơn hàng</p>
 <?php
 	$sql_lietke_dh = "SELECT * FROM tbl_cart,tbl_dangky WHERE tbl_cart.id_khachhang=tbl_dangky.id_dangky ORDER BY tbl_cart.id_cart DESC";
 	$query_lietke_dh = mysqli_query($mysqli,$sql_lietke_dh);
 ?>
 <table style="width:100%" border="1" style="border-collapse: collapse;">
-  <tr>
+  <tr style="text-align: center;">
   	<th>Id</th>
     <th>Mã đơn hàng</th>
     <th>Tên khách hàng</th>
@@ -21,7 +22,7 @@
   while($row = mysqli_fetch_array($query_lietke_dh)){
   	$i++;
   ?>
-  <tr>
+  <tr style="text-align: center;">
   	<td><?php echo $i ?></td>
     <td><?php echo $row['code_cart'] ?></td>
     <td><?php echo $row['tenkhachhang'] ?></td>
