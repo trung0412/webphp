@@ -1,6 +1,6 @@
 <p>Xem đơn hàng</p>
 <?php
-    $code = $_GET['code'];
+  $code = $_GET['code'];
 	$sql_lietke_dh = "SELECT * FROM tbl_cart_chitiet,tbl_sanpham WHERE tbl_cart_chitiet.id_sanpham=tbl_sanpham.id_sanpham AND tbl_cart_chitiet.code_cart='".$code."' ORDER BY tbl_cart_chitiet.id_cart_chitiet DESC";
 	$query_lietke_dh = mysqli_query($mysqli,$sql_lietke_dh);        
 ?>

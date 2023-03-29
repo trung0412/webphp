@@ -19,13 +19,18 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
                             <a href="index.php" class="nav-item nav-link active">Trang chủ</a>
-                            <?php
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Danh mục</a>
+                                <div class="dropdown-menu rounded-0 m-0">
+                                <?php
 			                    while($row_danhmuc = mysqli_fetch_array($query_danhmuc)){
-			                ?>
-                            <a href="shop.php?quanly=danhmucsanpham&id=<?php echo $row_danhmuc['id_danhmuc'] ?>" class="nav-item nav-link"><?php echo $row_danhmuc['tendanhmuc'] ?></a>
-                            <?php
-				            }
-			                ?>
+			                    ?>
+                                    <a href="shop.php?quanly=danhmucsanpham&id=<?php echo $row_danhmuc['id_danhmuc'] ?>" class="nav-item nav-link"><?php echo $row_danhmuc['tendanhmuc'] ?></a>
+                                <?php
+				                }
+			                    ?>
+                                </div>
+                            </div>
                             
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
@@ -35,15 +40,24 @@
                                 </div>
                             </div>
                             <a href="contact.html" class="nav-item nav-link">Liên hệ</a>
-                        </div>
+                        
                        
-                        <div class="navbar-nav ml-auto py-0">
+                        
                             <a href="dangnhap.php" class="nav-item nav-link">Đăng nhập</a>
                             <?php
-                                if(isset($_SESSION['dangky'])){ 
+                                if(isset($_SESSION['dangky'])){
+
                             ?>
                                 <a href="index.php?dangxuat=1" class="nav-item nav-link">Đăng xuất</a>
                                 <a href="thaydoimatkhau.php?quanly=thaydoimatkhau" class="nav-item nav-link">Thay đổi mật khẩu</a>
+                                <p style="margin-top: 20px;">Xin chào : 
+                                    <?php
+                                        if(isset($_SESSION['dangky'])){
+                                            echo $_SESSION['dangky'];
+                                            echo $_SESSION['id_khachhang'];
+                                        } 
+                                    ?>
+                                </p>
                             <?php 
                             }else {
                             ?>
@@ -53,15 +67,6 @@
                             ?>
                         </div>
                         
-                        <div class="navbar-nav ml-auto py-0">
-                            <p style="margin-top: 15px;">Xin chào : 
-                                <?php
-                                    if(isset($_SESSION['dangky'])){
-                                        echo $_SESSION['dangky'];
-                                        echo $_SESSION['id_khachhang'];
-                                    } 
-                                ?>
-                            </p>
-                        </div>
+
                     </div>
  </nav>

@@ -14,7 +14,7 @@
     <th>Số điện thoại</th>
     <th>Tình trạng</th>
   	<th>Quản lý</th>
-
+    <th>In</th>
   
   </tr>
   <?php
@@ -39,6 +39,9 @@
     </td>
    	<td>
    		<a href="index.php?action=donhang&query=xemdonhang&code=<?php echo $row['code_cart'] ?>">Xem đơn hàng</a> 
+   	</td>
+     <td>
+   		<a href="modules/quanlydonhang/indonhang.php?code=<?php echo $row['code_cart'] ?>">In đơn hàng</a> 
    	</td>
    
   </tr>
