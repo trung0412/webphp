@@ -67,16 +67,18 @@
                         <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
                         <div class="col-lg-7">
                             <div class="p-5">
-                                <div class="text-center">
+                                <div class="text-center" style="margin-top: 90px;">
                                     <h1 class="h4 text-gray-900 mb-4">Đăng nhập</h1>
                                 </div>
                                 <form action="" method="POST">
                                    
                                     <div class="form-group">
+                                        <p>Tên đăng nhập hoặc Email :</p>
                                         <input type="email" class="form-control form-control-user" id="exampleInputEmail"
                                             placeholder="Email "name="email">
                                     </div>
                                     <div class="form-group">
+                                        <p>Mật khẩu :</p>
                                         <input type="password" class="form-control form-control-user" id="exampleInputEmail"
                                             placeholder="Mật khẩu "name="matkhau">
                                     </div>
@@ -87,9 +89,7 @@
 
                                 </form>
                                 <hr>
-                                <div class="text-center">
-                                    <a class="small" href="#">Quên mật khẩu</a>
-                                </div>
+
                                 <div class="text-center">
                                     <a class="small" href="dangky.php">Đăng ký</a>
                                 </div>

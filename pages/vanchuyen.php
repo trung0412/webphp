@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -95,18 +96,96 @@
 
 	}
     ?>
+    <p style="text-align: center;">Thông tin vận chuyển</p>
     <div class="container">
-        <!-- Responsive Arrow Progress Bar -->
-        <div class="arrow-steps clearfix">
-            <div class="step current"> <span> <a href="giohang.php?quanly=giohang" >Giỏ hàng</a></span> </div>
-            <div class="step"> <span><a href="vanchuyen.php?quanly=vanchuyen" >Vận chuyển</a></span> </div>
-            <div class="step"> <span><a href="thongtinthanhtoan.php?quanly=thanhtoan" >Thanh toán</a><span> </div>
-            <div class="step"> <span><a href="donhangdadat.php?quanly=donhangdadat" >Lịch sử đon hàng</a><span> </div>
-        </div>
+            <!-- Responsive Arrow Progress Bar -->
+            <div class="arrow-steps clearfix">
+                <div class="step done"> <span> <a href="giohang.php?quanly=giohang" >Giỏ hàng</a></span> </div>
+                <div class="step current"> <span><a href="vanchuyen.php?quanly=vanchuyen" >Vận chuyển</a></span> </div>
+                <div class="step"> <span><a href="thongtinthanhtoan.php?quanly=thanhtoan" >Thanh toán</a><span> </div>
+                <div class="step"> <span><a href="giohang.php?quanly=donhangdadat" >Lịch sử đon hàng</a><span> </div>
+            </div>
+            <h4 style="margin-top: 20px;">Thông tin vận chuyển</h4>
+            <?php
+                if(isset($_POST['themvanchuyen'])){
+                    $tenkhachhang = $_POST['tenkhachhang'];
+                    $dienthoai = $_POST['dienthoai'];
+                    $diachi = $_POST['diachi'];
+                    $ghichu = $_POST['ghichu'];
+                    $id_dangky = $_SESSION['id_khachhang'];
+                    $sql_them_vanchuyen = mysqli_query($mysqli,"INSERT INTO tbl_shipping(tenkhachhang,dienthoai,diachi,ghichu,id_dangky) 
+                    VALUES('$tenkhachhang','$dienthoai','$diachi','$ghichu','$id_dangky')");
+                    if($sql_them_vanchuyen)
+                    {
+                        echo '<script>alert("Cập nhật vận chuyển thành công")</script>';
+                    }
+                }elseif(isset($_POST['capnhatvanchuyen'])){
+                    $tenkhachhang = $_POST['tenkhachhang'];
+                    $dienthoai = $_POST['dienthoai'];
+                    $diachi = $_POST['diachi'];
+                    $ghichu = $_POST['ghichu'];
+                    $id_dangky = $_SESSION['id_khachhang'];
+                    $sql_update_vanchuyen = mysqli_query($mysqli,"UPDATE tbl_shipping SET tenkhachhang='$tenkhachhang',dienthoai='$dienthoai',diachi='$diachi',ghichu='$ghichu',id_dangky='$id_dangky' WHERE id_dangky='$id_dangky'");
+                    if($sql_update_vanchuyen)
+                    {
+                        echo '<script>alert("Cập nhật vận chuyển thành công")</script>';
+                    }
+                }
+            ?>
+            <div class="row">
+                <?php
+                    $id_dangky = $_SESSION['id_khachhang'];
+                    $sql_get_vanchuyen = mysqli_query($mysqli,"SELECT * FROM tbl_shipping WHERE id_dangky='$id_dangky' LIMIT 1");
+                    $count = mysqli_num_rows($sql_get_vanchuyen);
+                    if($count>0){
+                        $row_get_vanchuyen = mysqli_fetch_array($sql_get_vanchuyen);
+                        $tenkhachhang = $row_get_vanchuyen['tenkhachhang'];
+                        $dienthoai = $row_get_vanchuyen['dienthoai'];
+                        $diachi = $row_get_vanchuyen['diachi'];
+                        $ghichu = $row_get_vanchuyen['ghichu'];
+                    }else{
+                        $tenkhachhang = '';
+                        $dienthoai = '';
+                        $diachi = '';
+                        $ghichu = '';
+                    }
+
+                ?>
+                <div class="col-md-12">
+                <form action="" autocomplete="off" method="POST">
+                <div class="form-group">
+                    <label for="email">Họ và tên</label>
+                    <input type="text" name="tenkhachhang" class="form-control" value="<?php echo $tenkhachhang ?>" placeholder="..." >
+                </div>
+                    <div class="form-group">
+                    <label for="email">Số điện thoại</label>
+                    <input type="text" name="dienthoai" class="form-control" value="<?php echo $dienthoai ?>"  placeholder="...">
+                </div>
+                <div class="form-group">
+                    <label for="email">Địa chỉ</label>
+                    <input type="text" name="diachi" class="form-control" value="<?php echo $diachi ?>"  placeholder="...">
+                </div>
+                <div class="form-group">
+                    <label for="email">Ghi chú</label>
+                    <input type="text" name="ghichu" class="form-control" value="<?php echo $ghichu ?>"  placeholder="..." >
+                </div>
+                <?php
+                if($tenkhachhang=='' && $tenkhachhang=='') {
+                ?>
+                <button type="submit" name="themvanchuyen" class="btn btn-primary">Thêm vận chuyển</button>
+                <?php
+                } elseif($tenkhachhang!='' && $tenkhachhang!=''){
+                ?>
+                <button type="submit" name="capnhatvanchuyen" class="btn btn-success">Cập nhật vận chuyển</button>
+                <?php
+                } 
+                ?>
+                </form>
+                </div>
+            </div>
     </div>
     <!-- end Responsive Arrow Progress Bar -->
-
-    <!-- Cart Start -->
+    <!-- GIỎ HÀNG -->
     <div class="container-fluid pt-5">
         <div class="row px-xl-5">
             <div class="col-lg-8 table-responsive mb-5">
@@ -120,7 +199,7 @@
                             <th>Số lượng</th>
                             <th>Giá sản phẩm</th>
                             <th>Thành tiền</th>
-                            <th>Quản lý</th>
+                            
                         </tr>
                     </thead>
                     <?php
@@ -156,7 +235,7 @@
                         </td>
                         <td class="align-middle"><?php echo number_format($cart_item['giasp'],0,',','.').'vnd' ?></td>  
                         <td class="align-middle"><?php echo  number_format($thanhtien,0,',','.').'vnd'?></td>
-                        <td class="align-middle"><a href="themgiohang.php?xoa=<?php echo $cart_item['id'] ?>">Xóa</a></td>
+                        
                         
                     </tr>
 
@@ -168,11 +247,11 @@
                         <td colspan="8">
                             
                             <p>Tổng tiền : <?php echo  number_format($tongtien,0,',','.').'vnd'?></p>
-                            <p style="text-align:center; padding: 15px"><a href="themgiohang.php?xoatatca=1">Xóa tất cả</a></p>
+
                             <?php
                             if(isset($_SESSION['dangky'])){
                                 ?>
-                                <p><a href="vanchuyen.php?quanly=vanchuyen">Hình thức vận chuyển</a></p>
+                                <p><a href="thanhtoan.php">Đặt hàng</a></p>
                             <?php  
                             }else{
                             ?>
@@ -200,35 +279,10 @@
                 </table>
 
             </div>
-            <!-- <div class="col-lg-4">
-                 <div class="card border-secondary mb-5">
-                    <div class="card-header bg-secondary border-0">
-                        <h4 class="font-weight-semi-bold m-0">Cart Summary</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between mb-3 pt-1">
-                            <h6 class="font-weight-medium">Subtotal</h6>
-                            <h6 class="font-weight-medium">$150</h6>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-medium">Shipping</h6>
-                            <h6 class="font-weight-medium">$10</h6>
-                        </div>
-                    </div>
-                    <div class="card-footer border-secondary bg-transparent">
-                        <button class="btn btn-block btn-primary my-3 py-3">Proceed To Checkout</button>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
 
-    <!-- Cart End -->
-
-
-    <!-- Footer Start -->
-   
-    <!-- Footer End -->
+    <!-- GIỎ HÀNG -->
 
 
     <!-- Back to Top -->

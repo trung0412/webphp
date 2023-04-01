@@ -16,11 +16,11 @@ class Mailer {
       $mail->Host = "smtp.gmail.com";
       //indico el puerto que usa Gmail 465 or 587
       $mail->Port = 465; 
-      $mail->Username = "letrung041201@gmail.com";
-      $mail->Password = "pfeaiehjopaakagi";
-      $mail->SetFrom('letrung041201@gmail.com','trung');
+      $mail->Username = "letrung042001@gmail.com";
+      $mail->Password = "srkgvgvumifxjyib";
+      $mail->SetFrom('letrung042001@gmail.com','trung');
       $mail->AddAddress($maildathang,'hoang trung');
-      $mail->addCC('letrung041201@gmail.com');
+      $mail->addCC('letrung042001@gmail.com');
 
       $mail->isHTML(true);
       $mail->Subject = $tieude;

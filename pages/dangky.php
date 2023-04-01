@@ -104,9 +104,7 @@
                                     <a class="small" href="dangnhap.php?quanly=dangnhap">Đăng nhập nếu có tài khoản</a>
                                     
                                 </div>
-                                <div class="text-center">
-                                <a class="small" href="#">Quên mật khẩu ?</a>
-                                </div>
+
                             </div>
                         </div>
                     </div>

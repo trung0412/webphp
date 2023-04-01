@@ -5,7 +5,7 @@
     if(isset($_POST['dangnhap'])){
         $taikhoan = $_POST['username'];
         $matkhau = md5($_POST['password']);
-        $tenadmin = $_POST['tenadmin'];
+        // $tenadmin = $_POST['tenadmin'];
         $sql= "SELECT * FROM tbl_admin WHERE username = '".$taikhoan."'AND password = '".$matkhau."' LIMIT 1 ";
         $row = mysqli_query($mysqli,$sql);
         $count = mysqli_num_rows($row);
@@ -14,7 +14,7 @@
             header("Location: index.php");
         }else{
             echo '<script>alert("Tài khoản hoặc mật khẩu không đúng, vui lòng nhập lại.");</script>';
-            header("Location:login.php");
+            // header("Location:login.php");
         }
     }
 ?>
@@ -63,7 +63,7 @@
                                     </div>
                                     <form autocomplete="off" class="user" action="" method="POST">
                                         <div class="form-group">
-                                            <p>Tên tài khoản :</p>
+                                            <p>Tên đăng nhập :</p>
                                             <input type="text" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Tên đăng nhập" name="username">
@@ -80,18 +80,10 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <input type="submit" class="btn btn-primary btn-user btn-block" value="Login" name="dangnhap">
+                                        <input type="submit" class="btn btn-primary btn-user btn-block" value="Đăng nhập" name="dangnhap">
                                         <hr>
-                                        <div class="text-center">
-                                            <a class="" href="index.html" class="btn btn-google btn-user btn-block">
-                                                Forgot Password?
-                                            </a>
-                                        </div>
-                                        <div class="text-center">
-                                            <a class="" href="index.html" class="btn btn-google btn-user btn-block">
-                                                Create an Account!
-                                            </a>
-                                        </div>
+
+                                     
                                  
                                     </form>
                                     <hr>

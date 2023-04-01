@@ -1,1 +1,1 @@
-<p>Welcom to Dashboard</p>
+<p>Chào mừng bạn đã đến bảng điều khiểu trang Admin</p>
