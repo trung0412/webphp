@@ -102,13 +102,13 @@
                 <h3 class="font-weight-semi-bold mb-4">Giá : <?php echo number_format($row_chitiet['giasp'],0,',','.').'vnd' ?></h3>
                 <h3 class="text-truncate mb-3">Tên danh mục : <?php echo $row_chitiet['tendanhmuc'] ?></h3>
                 <h3 class="text-truncate mb-3">Mã sản phẩm : <?php echo $row_chitiet['masp'] ?></h3>
-                <h3 class="text-truncate mb-3">Mã sản phẩm : <?php echo $row_chitiet['soluong'] ?></h3>
+                <h3 class="text-truncate mb-3">Số lượng : <?php echo $row_chitiet['soluong'] ?></h3>
         
-                <p class="mb-4">Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit clita ea. Sanc invidunt ipsum et, labore clita lorem magna lorem ut. Erat lorem duo dolor no sea nonumy. Accus labore stet, est lorem sit diam sea et justo, amet at lorem et eirmod ipsum diam et rebum kasd rebum.</p>
+                <p class="mb-4">Tất cả sản phẩm đều được đảm bảo về chất lượng</p>
                 <?php
                 } 
                 ?>
-                <div class="d-flex mb-3">
+                <!-- <div class="d-flex mb-3">
                     <p class="text-dark font-weight-medium mb-0 mr-3">Sizes:</p>
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" class="custom-control-input" id="size-1" name="size">
@@ -131,9 +131,9 @@
                             <label class="custom-control-label" for="size-5">XL</label>
                         </div>
 
-                </div>
+                </div> -->
                 <div class="d-flex align-items-center mb-4 pt-2">
-                    <div class="input-group quantity mr-3" style="width: 130px;">
+                    <!-- <div class="input-group quantity mr-3" style="width: 130px;">
                         <div class="input-group-btn">
                             <button class="btn btn-primary btn-minus" >
                             <i class="fa fa-minus"></i>
@@ -145,7 +145,7 @@
                                 <i class="fa fa-plus"></i>
                             </button>
                         </div>
-                    </div>
+                    </div> -->
                     
                     <button name="themgiohang" value="Thêm giỏ hàng" class="themgiohang"><i class="fa fa-shopping-cart mr-1"></i>Thêm giỏ hàng</button>
                 </div>

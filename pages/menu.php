@@ -39,7 +39,7 @@
                                     <a href="checkout.html" class="dropdown-item">Checkout</a>
                                 </div>
                             </div>
-                            <a href="contact.html" class="nav-item nav-link">Liên hệ</a>
+                            <!-- <a href="contact.html" class="nav-item nav-link">Liên hệ</a> -->
                         
                        
                         

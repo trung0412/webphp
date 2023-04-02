@@ -251,7 +251,7 @@
                             <?php
                             if(isset($_SESSION['dangky'])){
                                 ?>
-                                <p><a href="thanhtoan.php">Đặt hàng</a></p>
+                                <p><a href="thongtinthanhtoan.php?quanly=thanhtoan">Hình thức thanh toán </a></p>
                             <?php  
                             }else{
                             ?>
