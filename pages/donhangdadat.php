@@ -102,7 +102,7 @@
             <div class="arrow-steps clearfix">
                 <div class="step done"> <span> <a href="giohang.php?quanly=giohang" >Giỏ hàng</a></span> </div>
                 <div class="step done"> <span><a href="vanchuyen.php?quanly=vanchuyen" >Vận chuyển</a></span> </div>
-                <div class="step done"> <span><a href="thongtinthanhtoan.php?quanly=thanhtoan" >Thanh toán</a><span> </div>
+                <div class="step done"> <span><a href="thongtinthanhtoan.php?quanly=thongtinthanhtoan" >Thanh toán</a><span> </div>
                 <div class="step current"> <span><a href="donhangdadat.php?quanly=donhangdadat" >Lịch sử đơn hàng</a><span> </div>
             </div>
     </div>

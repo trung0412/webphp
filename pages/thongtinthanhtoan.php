@@ -103,8 +103,38 @@
             <div class="arrow-steps clearfix">
                 <div class="step done"> <span> <a href="giohang.php?quanly=giohang" >Giỏ hàng</a></span> </div>
                 <div class="step done"> <span><a href="vanchuyen.php?quanly=vanchuyen" >Vận chuyển</a></span> </div>
-                <div class="step current"> <span><a href="thongtinthanhtoan.php?quanly=thanhtoan" >Thanh toán</a><span> </div>
+                <div class="step current"> <span><a href="thongtinthanhtoan.php?quanly=thongtinthanhtoan" >Thanh toán</a><span> </div>
                 <div class="step"> <span><a href="giohang.php?quanly=donhangdadat" >Lịch sử đon hàng</a><span> </div>
+            </div>
+            <div style="margin-top: 20px;" class="row">
+            <?php
+                    $id_dangky = $_SESSION['id_khachhang'];
+                    $sql_get_vanchuyen = mysqli_query($mysqli,"SELECT * FROM tbl_shipping WHERE id_dangky='$id_dangky' LIMIT 1");
+                    $count = mysqli_num_rows($sql_get_vanchuyen);
+                    if($count>0){
+                        $row_get_vanchuyen = mysqli_fetch_array($sql_get_vanchuyen);
+                        $tenkhachhang = $row_get_vanchuyen['tenkhachhang'];
+                        $dienthoai = $row_get_vanchuyen['dienthoai'];
+                        $diachi = $row_get_vanchuyen['diachi'];
+                        $ghichu = $row_get_vanchuyen['ghichu'];
+                    }else{
+                        $tenkhachhang = '';
+                        $dienthoai = '';
+                        $diachi = '';
+                        $ghichu = '';
+                    }
+
+                ?>
+                <div class="col-md-8">
+                    <h4>Thông tin vận chuyển và đơn hàng</h4>
+                    <ul>
+                        <li>Họ và tên vận chuyển : <b><?php echo $tenkhachhang ?></b></li>
+                        <li>Số điện thoại : <b><?php echo $dienthoai ?></b></li>
+                        <li>Địa chỉ : <b><?php echo $diachi ?></b></li>
+                        <li>Ghi chú : <b><?php echo $ghichu ?></b></li>
+                    </ul>
+                </div>
+
             </div>
     </div>
     <!-- end Responsive Arrow Progress Bar -->
@@ -123,7 +153,7 @@
                             <th>Số lượng</th>
                             <th>Giá sản phẩm</th>
                             <th>Thành tiền</th>
-                            <th>Quản lý</th>
+                            
                         </tr>
                     </thead>
                     <?php
@@ -159,7 +189,7 @@
                         </td>
                         <td class="align-middle"><?php echo number_format($cart_item['giasp'],0,',','.').'vnd' ?></td>  
                         <td class="align-middle"><?php echo  number_format($thanhtien,0,',','.').'vnd'?></td>
-                        <td class="align-middle"><a href="themgiohang.php?xoa=<?php echo $cart_item['id'] ?>">Xóa</a></td>
+                       
                         
                     </tr>
 
@@ -171,18 +201,11 @@
                         <td colspan="8">
                             
                             <p>Tổng tiền : <?php echo  number_format($tongtien,0,',','.').'vnd'?></p>
-                            <p style="text-align:center; padding: 15px"><a href="themgiohang.php?xoatatca=1">Xóa tất cả</a></p>
-                            <?php
-                            if(isset($_SESSION['dangky'])){
-                                ?>
-                                <p><a href="thanhtoan.php">Đặt hàng</a></p>
-                            <?php  
-                            }else{
-                            ?>
-                                <p><a href="dangky.php?quanly=dangky">Đăng ký đặt hàng</a></p>
-                            <?php    
-                            }   
-                            ?>
+                            
+                            <form method="POST"  action="thanhtoanmomo.php">
+                                <input type="hidden" value="<?php echo $tongtien ?>" name="tongtien">
+                                <input type="submit" class="btn btn-danger" value="Thanh toán momo" name="payUrl">
+                            </form>
                     
                            
                         </td>
