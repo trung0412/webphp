@@ -9,6 +9,7 @@
   	<th>Id</th>
     <th>Mã đơn hàng</th>
     <th>Tên sản phẩm</th>
+    <th>Hình ảnh</th>
     <th>Số lượng</th>
     <th>Đơn giá</th>
     <th>Thành tiền</th>
@@ -26,6 +27,7 @@
   	<td><?php echo $i ?></td>
     <td><?php echo $row['code_cart'] ?></td>
     <td><?php echo $row['tensanpham'] ?></td>
+    <td><img src="modules/quanlysp/uploads/<?php echo $row['hinhanh'] ?>" width="150px"></td>
     <td><?php echo $row['soluongmua'] ?></td>
     <td><?php echo number_format($row['giasp'],0,',','.').'vnd' ?></td>
     <td><?php echo number_format($row['giasp']* $row['soluongmua'],0,',','.').'vnd'?></td>
